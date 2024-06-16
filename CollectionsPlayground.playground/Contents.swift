@@ -61,7 +61,7 @@ print(num)
 if num % 2 == 0 {
     print("even")
 } else {
-    print(odd)
+    print("odd")
 }
 // can use else if as well
 
