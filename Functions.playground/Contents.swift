@@ -1,6 +1,6 @@
 import UIKit
 
-//Functions and Parameters
+// MARK: Functions and Parameters
 
 func addTwoNums(a: Int, b: Int) -> Int {
     return a + b
@@ -20,17 +20,18 @@ func isEven(number: Int) -> Bool {
 print(addTwoNums(a: 3, b: 5)) // 8
 var x = 5
 var y = 20
+
 print(squareNumber(num: x)) // 25
 print(isEven(number: x)) // false
 print(isEven(number: y)) // true
 
-// Function types
+// MARK: Function types
 // Above addTwoNums is of type (Int, Int) -> Int
 // can create variables also.
 var mathFunction: (Int, Int) -> Int = addTwoNums
 print(mathFunction(3,4))  // 7
 
-// Default parameter value
+// MARK: Default parameter value
 func someFunction(first: Int, second: Int = 12) {
     print("Param 1: \(first), Param 2: \(second)")
 }
@@ -43,7 +44,7 @@ print("Terminator value change demo", terminator: "-------")
 // Terminator value change demo-------
 
 
-// Variadic parameters
+// MARK: Variadic parameters
 func arithmeticMean(_ numbers: Int...) -> Int {
   var sum = 0
   for number in numbers {
@@ -56,7 +57,7 @@ func arithmeticMean(_ numbers: Int...) -> Int {
 }
 print(arithmeticMean(1,2,3,6)) // 3
 
-// Inout parameters
+// MARK: Inout parameters
 func swapTwoInts(_ a: inout Int,_ b: inout Int) {
   let temp = a
   a = b
@@ -66,7 +67,7 @@ var num1 = 3, num2 = 5
 swapTwoInts(&num1,&num2)
 print(num1, num2) // 5,3
 
-// Function type as return type
+//MARK: Function type as return type
 
 func stepForward(_ num: Int) -> Int {
     return num+1
@@ -85,7 +86,7 @@ while currentValue != 0 {
 }
 print(currentValue)
 
-// Nested functions
+// MARK: Nested functions
 /*
 func chooseStepFunction(backward: Bool) -> (Int) -> Int {
     func stepForward(_ num: Int) -> Int {

@@ -20,7 +20,7 @@ func isGreaterThanThree(number: Int) -> Bool {
 print(isGreaterThanThree(number: 2))
 
 // Below is sorted(by:) function where by parameter takes closure of type (String, String) -> Bool
-// func is spetial type of closure only
+// Global and nested functions is special cases of closure.
 
 let names = ["Alex", "Smith", "Harry", "Joe", "Henry"]
 
@@ -32,7 +32,7 @@ print(names.sorted(by: backward)) // ["Smith", "Joe", "Henry", "Harry",  "Alex"]
 var reversedNames = names.sorted(by: {(s1: String, s2: String) -> Bool in return s1 > s2})
 print(reversedNames) // ["Smith", "Joe", "Henry", "Harry",  "Alex"]
 
-// Sorthand versions
+// MARK: Shorthand versions
 print(names.sorted(by: {s1,s2 in return s1>s2}))
 print(names.sorted(by: {s1,s2 in s1>s2}))
 print(names.sorted(by: {$0>$1}))
@@ -43,7 +43,7 @@ print(names.sorted(by: >))
 reversedNames = names.sorted() {$0 > $1}
 reversedNames = names.sorted {$0 > $1}
 
-// Capturing values through closure
+// MARK: Capturing values through closure
 func makeIncrementer(forIncrement amount: Int) -> () -> Int {
   var runningTotal = 0
   func incrementer() -> Int {
