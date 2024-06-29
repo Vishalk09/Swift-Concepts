@@ -6,5 +6,9 @@
         <page name='GlobalvsMainDemo'/>
         <page name='QosDemo'/>
         <page name='CustomQueue'/>
+        <page name='SerialQueueSyncDemo'/>
+        <page name='SerialQueueAsyncDemo'/>
+        <page name='ConcurrentQueueSync'/>
+        <page name='ConcurrentQueueAsync'/>
     </pages>
 </playground>
