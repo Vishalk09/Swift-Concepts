@@ -14,7 +14,7 @@ class Person {
 
 class MacBook {
   let name: String
-  var owner: Person? // can either this or MAcBook var in PErson class weak
+  var owner: Person? // can either this or MacBook var in Parson class weak
   init(name: String, owner: Person?) {
     self.name = name
     self.owner = owner

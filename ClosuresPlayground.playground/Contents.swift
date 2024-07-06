@@ -25,7 +25,7 @@ print(isGreaterThanThree(number: 2))
 let names = ["Alex", "Smith", "Harry", "Joe", "Henry"]
 
 func backward(_ s1: String, _ s2: String) -> Bool {
-  return s1>s2
+    return s1>s2
 }
 print(names.sorted(by: backward)) // ["Smith", "Joe", "Henry", "Harry",  "Alex"]
 
@@ -45,11 +45,11 @@ reversedNames = names.sorted {$0 > $1}
 
 // MARK: Capturing values through closure
 func makeIncrementer(forIncrement amount: Int) -> () -> Int {
-  var runningTotal = 0
-  func incrementer() -> Int {
-    runningTotal += amount
-    return runningTotal
-  }
+    var runningTotal = 0
+    let incrementer: () -> Int = {
+        runningTotal += amount
+        return runningTotal
+    }
   return incrementer
 }
 let incrementByTen = makeIncrementer(forIncrement: 10)
