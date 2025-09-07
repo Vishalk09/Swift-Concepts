@@ -5,12 +5,15 @@ enum Operation {
     case add, sub, mult, div
 }
 
+// Protocol requires any conforming type to implement didReceiveData(_:) 
 protocol MyDelegate {
     func didReceiveData(_ result: Int)
 }
 
+// Class responsible for performing operations and sending result via delegate
 class FirstClass {
     var delegate: MyDelegate?
+//    Performs the given operation on two numbers and notifies delegate with the result
     func sendData(_ value1: Int, _ value2: Int, operation: Operation) {
         var answer = 0
         switch operation {
@@ -23,10 +26,13 @@ class FirstClass {
             case .div:
                 answer = value1 / value2
         }
+        // Notify the delegate with the computed result
         delegate?.didReceiveData(answer)
     }
 }
 
+// Class conforming to MyDelegate protocol
+// Responsible for receiving and handling results from FirstClass
 class SecondClass: MyDelegate {
     let obj = FirstClass()
     
